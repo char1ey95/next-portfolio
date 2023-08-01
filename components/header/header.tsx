@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Header = () => {
     return (
         <header className="text-gray-600 body-font">
@@ -9,10 +11,18 @@ const Header = () => {
                     <span className="ml-3 text-xl">강찬수의 포트폴리오</span>
                 </a>
                 <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                    <a className="mr-5 hover:text-gray-900">Home</a>
-                    <a className="mr-5 hover:text-gray-900">About</a>
-                    <a className="mr-5 hover:text-gray-900">Stack</a>
-                    <a className="mr-5 hover:text-gray-900">Project</a>
+                    <Link href="/" className="mr-5 hover:text-gray-900">
+                        Home
+                    </Link>
+                    <Link href="/about" className="mr-5 hover:text-gray-900">
+                        About
+                    </Link>
+                    <Link href="/skills" className="mr-5 hover:text-gray-900">
+                        Skills
+                    </Link>
+                    <Link href="/projects" className="mr-5 hover:text-gray-900">
+                        Project
+                    </Link>
                 </nav>
                 <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
