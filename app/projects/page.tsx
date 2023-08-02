@@ -1,3 +1,4 @@
+import ProjectItem from "@/components/projects/project-item";
 import { DATABASE_ID, TOKEN } from "@/config";
 
 const getData = async () => {
@@ -24,19 +25,19 @@ const getData = async () => {
 const Projects = async () => {
     const response = await getData()
 
-    const projectNames = response.results.map((v: any) => (
-        v.properties.이름.title
-    ))
+    const projectNames = response.results
 
-    console.log(1)
     return (
-        <div>
-            총 프로젝트 : {
-                projectNames.map((v: any) => <div>
-                    {v[0].text.content}
-                </div>)
-            }
-        </div>
+        <>
+            <h1 className="text-4xl font-bold sm:text-6xl">총 프로젝트</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 m-6 py-10 sm:w-full">
+                {
+                    projectNames.map((v: any, idx: number) => (
+                        <ProjectItem key={idx} data={v} />
+                    ))
+                }
+            </div>
+        </>
     )
 }
 
